@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>PUTRA PANEL - FINAL (Upload Script)</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<canvas id="particles"></canvas>
+
+<!-- LOGIN -->
+<div class="login-page" id="login-page">
+  <canvas id="login-particles"></canvas>
+  <div class="login-box">
+    <img class="login-photo" src="assets/images/foto-putra.png" alt="foto-putra">
+    <div class="login-title"><span>𝐀𝖐𝖘𝖊𝖘 𝕻𝖆𝖓𝖊𝖑</span></div>
+    <input id="username" class="login-input" placeholder="Username" autocomplete="off" />
+    <input id="password" class="login-input" placeholder="Password" type="password" autocomplete="off" />
+    <button class="login-button" onclick="checkLogin()">MASUK</button>
+    <div id="login-error" class="login-error">Username atau Password salah!</div>
+    <div class="credit">© CREATE BY PUTRA</div>
+  </div>
+</div>
+
+<!-- LOADING -->
+<div id="loading" class="loading-screen"><div>Masuk ke Game<span class="dot">.</span><span class="dot">.</span><span class="dot">.</span></div></div>
+
+<header>𝕻𝐔𝐓𝐑𝐀 𝕻𝐀𝐍𝐄𝐋 </header>
+
+<!-- MAIN PANEL -->
+<div class="container">
+  <!-- ROLE CARD (full-width) -->
+  <div class="card" id="role-card">
+    <div class="role-wrap">
+      <div class="role-icon" id="role-icon">
+        <!-- default SVG icon -->
+      </div>
+      <div class="role" id="role-text">ROLE: -</div>
+    </div>
+  </div>
+
+  <!-- Feature Cards -->
+  <div class="card"><h3>AIM HEAD</h3><div class="toggle"><span>ON / OFF</span><input type="checkbox"></div></div>
+  <div class="card"><h3>AIM FIRE</h3><div class="toggle"><span>ON / OFF</span><input type="checkbox"></div></div>
+  <!-- ... semua card lainnya sama seperti sebelumnya ... -->
+
+  <!-- UPLOAD CARD -->
+  <div class="card upload-card" id="upload-card">
+    <h3>UPLOAD FILE / SCRIPT</h3>
+    <p class="small">Unggah Script data inti panel.</p>
+    <input id="fileUpload" type="file" accept=".js,.json,.txt,.zip,image/*,video/*" style="display:none" />
+    <button class="upload-btn" onclick="document.getElementById('fileUpload').click()">UPLOAD FILE</button>
+    <div class="upload-list" id="upload-list"></div>
+    <div class="small">Ketika File data inti di upload seluruh menu panel bisa digunakan dalam game freefire.</div>
+  </div>
+
+  <!-- CLICK LOGIN APP -->
+  <div class="card" id="login-card">
+    <h3>CLICK LOGIN</h3>
+    <p class="small">Pilih aplikasi Free Fire yang ingin dibuka.</p>
+    <div>
+      <select id="ff-choice">
+        <option value="original">Free Fire (Original)</option>
+        <option value="max">Free Fire (Max)</option>
+      </select>
+      <button class="btn-login" onclick="openSelectedApp()">CLICK LOGIN</button>
+    </div>
+    <div id="login-status" class="small"></div>
+  </div>
+</div>
+
+<button class="close-btn" onclick="closePanel()">TUTUP PANEL</button>
+<div id="notif-container"></div>
+<div class="watermark">© CREATE BY PUTRA</div>
+<audio id="beep-sound" src="https://actions.google.com/sounds/v1/cartoon/wood_plank_flicks.ogg" preload="auto"></audio>
+
+<!-- JS -->
+<script src="js/main.js"></script>
+<script src="js/login.js"></script>
+<script src="js/upload.js"></script>
+</body>
+</html>
